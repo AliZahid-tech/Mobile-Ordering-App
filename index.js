@@ -1,2 +1,8 @@
 import menuArray from "/data.js";
-console.log(menuArray);
+const addBtn = document.querySelectorAll(".add");
+const orderSec = document.getElementById("your-order");
+addBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    orderSec.classList.toggle("hidden");
+  });
+});
