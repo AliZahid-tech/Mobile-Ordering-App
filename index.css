@@ -91,10 +91,7 @@ h3 {
   font-size: 0.75rem;
   color: #bbbbbb;
 }
-.cart {
-  border-bottom: 2px SOLID #393333;
-  padding-bottom: 30px;
-}
+
 .total-price {
   margin-top: 1rem;
   margin-bottom: 53px;
@@ -104,7 +101,7 @@ h3 {
 }
 .cmplt-order {
   display: block;
-  width: 95%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   background-color: #16db99;
@@ -117,4 +114,8 @@ h3 {
 }
 .hidden {
   display: none;
+}
+#cart-items {
+  border-bottom: 2px SOLID #393333;
+  padding: 15px 0 15px 0;
 }

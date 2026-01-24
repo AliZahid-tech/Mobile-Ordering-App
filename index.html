@@ -9,56 +9,13 @@
         <h2>The best burgers and pizzas in town</h2>
       </section>
     </header>
-    <section class="menu-data">
-      <div class="menu">
-        <p class="item-icon">🍕</p>
-        <div class="item-info">
-          <p class="item-name">Pizza1</p>
-          <p class="item-ingr">pepperoni</p>
-          <p>$<span class="item-price">14</span></p>
-        </div>
-        <button class="add">+</button>
-      </div>
-      <div class="menu">
-        <p class="item-icon">🍕</p>
-        <div class="item-info">
-          <p class="item-name">Pizza2</p>
-          <p class="item-ingr">pepperoni</p>
-          <p>$<span class="item-price">14</span></p>
-        </div>
-        <button class="add">+</button>
-      </div>
-      <div class="menu">
-        <p class="item-icon">🍕</p>
-        <div class="item-info">
-          <p class="item-name">Pizza3</p>
-          <p class="item-ingr">pepperoni</p>
-          <p>$<span class="item-price">14</span></p>
-        </div>
-        <button class="add">+</button>
-      </div>
-    </section>
-    <section class="your-order hidden" id="your-order">
+    <section class="menu-data"></section>
+    <section class="your-order" id="your-order">
       <h3>Your order</h3>
-      <section class="cart">
-        <div class="cart-item">
-          <div class="cart-item-info">
-            <p class="cart-item-name">Pizza</p>
-            <p class="cart-item-remove">Remove</p>
-          </div>
-          <p class="cart-item-price">$14</p>
-        </div>
-        <div class="cart-item">
-          <div class="cart-item-info">
-            <p class="cart-item-name">Pizza</p>
-            <p class="cart-item-remove">Remove</p>
-          </div>
-          <p class="cart-item-price">$14</p>
-        </div>
-      </section>
+      <div id="cart-items"></div>
       <div class="total-price">
         <p>Total price</p>
-        <p>$28</p>
+        <p>$ <span id="total-price">0</span></p>
       </div>
       <button class="cmplt-order">Complete order</button>
     </section>
