@@ -1,13 +1,22 @@
 import menuArray from "/data.js";
 // const addBtn = document.querySelectorAll(".add");
-const orderSec = document.getElementById("cart-items");
+const orderSec = document.getElementById("your-order");
+const orderItems = document.getElementById("cart-items");
 let orderSecIsClosed = orderSec.classList.contains("hidden");
 let cartArr = [];
 document.addEventListener("click", function (e) {
   if (e.target.dataset.btn) {
     const id = Number(e.target.dataset.btn);
-    console.log(id);
+    orderSec.classList.remove("hidden");
     renderOrderCart(id);
+  } else if (e.target.id === "cmplt-order") {
+    cartArr = [];
+    renderOrderCart();
+    orderSec.classList.add("hidden");
+  } else if (e.target.dataset.id) {
+    const uid = e.target.dataset.id;
+    removeItem(uid);
+    renderOrderCart();
   }
 });
 let menuSec = document.getElementsByClassName("menu-data")[0];
@@ -36,15 +45,15 @@ function renderOrderCart(btnId) {
       cartArr.push(item);
     }
   });
-  orderSec.innerHTML = ``;
+  orderItems.innerHTML = ``;
   cartArr.forEach((item) => {
-    orderSec.innerHTML += `
+    orderItems.innerHTML += `
 
       <section class="cart">
         <div class="cart-item">
           <div class="cart-item-info">
             <p class="cart-item-name">${item.name}</p>
-            <p class="cart-item-remove">Remove</p>
+            <p class="cart-item-remove" data-id="${item.id}">Remove</p>
           </div>
           <p>$ <span  class="cart-item-price">${item.price}</span></p>
         </div>
@@ -56,4 +65,8 @@ function renderOrderCart(btnId) {
     return acc + item.price;
   }, 0);
   document.getElementById("total-price").textContent = total;
+}
+function removeItem(uid) {
+  uid = Number(uid);
+  cartArr = cartArr.filter((item) => item.id !== uid);
 }
